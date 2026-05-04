@@ -77,6 +77,25 @@ body {
   border: 1px solid rgba(215, 204, 200, 0.2);
 }
 
+@utility benefit-card {
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
+  opacity: 1;
+  transform: none;
+  box-shadow: rgba(62, 39, 35, 0) 0px 0px 0px;
+}
+
+@utility benefit-span {
+  transition: color 0.3s;
+}
+
+@utility benefit-block {
+  width: 0%;
+  background: linear-gradient(90deg, rgb(109, 76, 65), rgb(161, 136, 127));
+}
+
 .course-card:hover {
   transform: translateY(-8px);
 }
@@ -87,6 +106,18 @@ body {
 
 .photo-card:hover .photo-card-overlay {
   opacity: 1;
+}
+
+.benefit-card:hover {
+  background: rgb(250, 249, 247);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
+  opacity: 1;
+  transform: translateY(-6px);
+  box-shadow: rgba(62, 39, 35, 0.12) 0px 20px 60px;
+  border-color: rgb(188, 170, 164);
 }
 
 @media (min-width: 768px) {
