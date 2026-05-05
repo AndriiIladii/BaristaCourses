@@ -96,6 +96,78 @@ body {
   background: linear-gradient(90deg, rgb(109, 76, 65), rgb(161, 136, 127));
 }
 
+@utility header-image {
+  background: linear-gradient(
+    135deg,
+    rgba(62, 39, 35, 0.45) 0%,
+    transparent 60%,
+    rgba(30, 14, 10, 0.55) 100%
+  );
+}
+
+@utility header-text {
+  background: rgba(215, 204, 200, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(215, 204, 200, 0.2);
+  color: rgb(215, 204, 200);
+}
+
+@utility header-subtext {
+  background: rgba(30, 14, 10, 0.55);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(188, 170, 164, 0.15);
+  opacity: 1;
+  transform: none;
+}
+
+@utility title {
+  font-size: clamp(2.15rem, 6vw, 4.25rem);
+  color: rgb(62, 39, 35);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-family: var(--font-secondary), "Playfair Display", serif;
+}
+
+@utility button-first {
+  box-shadow: rgba(62, 39, 35, 0.3) 0px 8px 32px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@utility button-second {
+  border: 1.5px solid rgb(188, 170, 164);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+@utility marquee-track {
+  width: max-content;
+  animation: 28s linear infinite marquee-scroll;
+  display: flex;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-50%);
+  }
+}
+
+.button-first:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(62, 39, 35, 0.45) 0px 12px 40px;
+}
+
+.button-second:hover {
+  transform: translateY(-2px);
+  border-color: rgb(141, 110, 99);
+}
+
 .course-card:hover {
   transform: translateY(-8px);
 }
