@@ -5,7 +5,7 @@ import CourseCard from "./CourseCard"
 const CoursesList = () => {
     return (
 
-        <section className="py-24 bg-white text-brown">
+        <section id="Courses" className="py-24 bg-white scroll-mt-20 text-brown">
             <div className="container mx-auto px-4">
                 <div className="mb-16">
                     <div className="flex items-center gap-3 mb-4">

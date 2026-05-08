@@ -2,7 +2,7 @@
 
 const Gallery = () => {
     return (
-        <section className="py-24 bg-secondary">
+        <section id="Gallery" className="py-24 scroll-mt-20 bg-[#faf9f7]">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                     <div>

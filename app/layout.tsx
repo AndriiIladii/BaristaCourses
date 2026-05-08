@@ -26,7 +26,7 @@ export default function RootLayout({
     <html
       lang="uk"
       suppressHydrationWarning
-      className={`${InterSans.variable} ${Playfair_DisplaySans.variable}  h-full antialiased`}
+      className={`${InterSans.variable} ${Playfair_DisplaySans.variable}  h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

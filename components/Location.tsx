@@ -2,7 +2,7 @@
 
 const Location = () => {
   return (
-    <section className="py-24 bg-white">
+    <section id="Location" className="py-24 scroll-mt-20 bg-[#faf9f7]">
       <div className="container mx-auto px-4">
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-4">
@@ -33,7 +33,7 @@ const Location = () => {
             <div className="p-5 rounded-2xl text-sm leading-relaxed bg-[#faf9f7] text-[#6d4c41] border-[1.5] border-[#e8e0de]"><p>💡 Зручно розташовані в 10 хвилинах від центру міста. Поруч зупинка громадського транспорту</p></div>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-xl">
-            <img src="/location-photo.png" alt="Студія Barista School" className="w-full h-72 md:h-96 object-cover" />
+            <img src="/location.jpg" alt="Студія Barista School" className="w-full h-72 md:h-96 object-cover" />
           </div>
         </div>
       </div>
