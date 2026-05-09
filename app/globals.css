@@ -7,6 +7,15 @@
 }
 
 @theme inline {
+  --color-brown-50: #e8e0de;
+  --color-brown-100: #d7ccc8;
+  --color-brown-200: #bcaaa4;
+  --color-brown-300: #a1887f;
+  --color-brown-400: #8d6e63;
+  --color-brown-500: #6d4c41;
+  --color-brown-800: #4e342e;
+  --color-surface: #faf9f7;
+
   --color-brown: rgb(62, 39, 35);
   --color-cream: rgb(141, 110, 99);
   --color-background: var(--background);
