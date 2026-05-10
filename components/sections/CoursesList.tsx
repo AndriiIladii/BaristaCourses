@@ -1,6 +1,6 @@
 import { courses } from "@/data/courses"
 import type { Course } from "@/data/courses"
-import CourseCard from "./CourseCard"
+import CourseCard from "../ui/CourseCard"
 
 const CoursesList = () => {
     return (

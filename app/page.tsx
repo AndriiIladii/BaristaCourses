@@ -1,11 +1,11 @@
-import BenefitsList from "@/components/BenefitsList";
-import CoursesList from "@/components/CoursesList";
-import Gallery from "@/components/Gallery";
-import Header from "@/components/Header";
-import Nav from "@/components/Nav";
-import Scroll from "@/components/Scroll";
-import Location from "@/components/Location";
-import Footer from "@/components/Footer";
+import BenefitsList from "@/components/sections/BenefitsList";
+import CoursesList from "@/components/sections/CoursesList";
+import Gallery from "@/components/sections/Gallery";
+import Header from "@/components/layout/Header";
+import Nav from "@/components/layout/Nav";
+import Scroll from "@/components/ui/Scroll";
+import Location from "@/components/sections/Location";
+import Footer from "@/components/layout/Footer";
 
 
 
