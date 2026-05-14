@@ -13,7 +13,7 @@ const Footer = () => {
                             <Coffee className="text-brown-100" />
                             <span className='text-brown-100 font-secondary text-[1.05rem] tracking-[-0.01em]'>Barista School</span>
                         </div>
-                        <p className="text-sm leading-relaxed max-w-xs text-brown-500">Школа бариста у Полтаві від Діани Рохманько. Навчаємо з любов'ю до кави та людей.</p>
+                        <p className="text-sm leading-relaxed max-w-xs text-brown-500">Школа бариста у Полтаві. Навчаємо з любовʼю до кави та людей.</p>
                     </div>
                     <div>
                         <p className="text-xs uppercase tracking-[0.18em] mb-5 text-brown-500">Навігація</p>
