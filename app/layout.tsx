@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import CoffeeLoader from "@/components/ui/CoffeeLoader";
 
 const InterSans = Inter({
   variable: "--font-inter-sans",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Barista School Poltava",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/gallery/gallery-4.png`, 
+        url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/gallery/gallery-4.png`,
         width: 1200,
         height: 630,
         alt: "Процес приготування кави на курсі",
@@ -49,7 +50,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${InterSans.variable} ${Playfair_DisplaySans.variable}  h-full antialiased scroll-smooth`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col">{children}</body>
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
+        <CoffeeLoader />
+        {children}
+      </body>
     </html>
   );
 }
