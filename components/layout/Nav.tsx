@@ -20,7 +20,7 @@ const Nav = () => {
                             <li key={link.text}><a className="text-sm transition-colors text-brown-300 tracking-[-0.01em] link" href={link.href}>{link.text}</a></li>
                         ))}
                     </ul>
-                    <a href="#Form" className="hidden md:block text-sm px-5 py-2 rounded-full transition-all text-brown-100 bg-brown-500 signUp">Записатись</a>
+                    <a href="#lead-form" className="hidden md:block text-sm px-5 py-2 rounded-full transition-all text-brown-100 bg-brown-500 signUp">Записатись</a>
                     <button aria-label="Toggle menu"
                         className={`md:hidden burger-menu ${isOpen ? 'close' : ''}`}
                         onClick={() => setIsOpen(!isOpen)}
@@ -48,7 +48,7 @@ const Nav = () => {
                             ))}
                         </ul>
                         <a
-                            href="#Form"
+                            href="#lead-form"
                             className="w-full text-center text-sm px-5 py-2.5 rounded-full text-brown-100 bg-brown-500 signUp"
                             onClick={() => setIsOpen(false)}
                         >

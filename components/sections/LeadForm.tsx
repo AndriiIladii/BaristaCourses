@@ -55,7 +55,6 @@ const LeadFormContent = () => {
 
     const onSubmit = async (data: FormValues) => {
         try {
-            await new Promise(resolve => setTimeout(resolve, 1000))
             const result = await sendLeadToTelegram(data);
             if (result.success) {
                 setIsSuccess(true)
@@ -164,6 +163,7 @@ const LeadFormContent = () => {
                                 <div>
                                     <label className='block text-xs uppercase tracking-wider mb-2 text-brown-400'>Як тобою зв'язатись?</label>
                                     <select {...register("contactMethod")} className="w-full pl-4 pr-10 py-[13px] rounded-xl border-[1.5px] border-brown-50 outline-none bg-white text-brown text-[0.95rem] transition-colors duration-200 font-primary appearance-none bg-no-repeat focus:border-brown-300 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238d6e63%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[position:right_1rem_center] bg-[length:1.2em_1.2em]">
+                                        <option value="" disabled className='hidden'>Оберіть спосіб зв'язку</option>
                                         <option className='text-brown-400' value="phone">Телефон</option>
                                         <option className='text-brown-400' value="telegram">Телеграм</option>
                                         <option className='text-brown-400' value="instagram">Інстаграм</option>

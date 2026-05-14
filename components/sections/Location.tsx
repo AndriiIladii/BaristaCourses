@@ -33,7 +33,7 @@ const Location = () => {
             <div className="p-5 rounded-2xl text-sm leading-relaxed bg-surface text-brown-500 border-[1.5px] border-brown-50"><p>💡 Зручно розташовані в 10 хвилинах від центру міста. Поруч зупинка громадського транспорту</p></div>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-xl">
-            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/location.jpg`} alt="Студія Barista School" width={800} height={600} className="w-full h-72 md:h-96 object-cover" />
+            <Image src="/location.jpg" alt="Студія Barista School" width={800} height={600} className="w-full h-72 md:h-96 object-cover" />
           </div>
         </div>
       </div>

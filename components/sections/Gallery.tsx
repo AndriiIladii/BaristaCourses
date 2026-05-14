@@ -15,13 +15,13 @@ const Gallery = () => {
                     <p className="text-sm max-w-xs leading-relaxed md:text-right text-cream">Кожна робота — результат навчання.<br />Кожна чашка — маленька перемога.</p>
                 </div>
                 <div className="gallery-grid">
-                    <div className="photo-card md:[grid-row:1/3] grid-auto"><Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/gallery/gallery-2.jpg`} alt="Пролив кави" width={800} height={800} className="photo-card-img w-full h-full object-cover" />
+                    <div className="photo-card md:[grid-row:1/3] grid-auto"><Image src="/gallery/gallery-2.jpg" alt="Пролив кави" width={800} height={800} className="photo-card-img w-full h-full object-cover" />
                     </div>
-                    <div className="photo-card"><Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/gallery/gallery-1.jpg`} alt="Темпер та кава" width={800} height={800} className="photo-card-img w-full h-full object-cover" />
+                    <div className="photo-card"><Image src="/gallery/gallery-1.jpg" alt="Темпер та кава" width={800} height={800} className="photo-card-img w-full h-full object-cover" />
                     </div>
-                    <div className="photo-card"><Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/gallery/gallery-3.jpg`} alt="Latte art — тюльпан" width={800} height={800} className="photo-card-img w-full h-full object-cover" />
+                    <div className="photo-card"><Image src="/gallery/gallery-3.jpg" alt="Latte art — тюльпан" width={800} height={800} className="photo-card-img w-full h-full object-cover" />
                     </div>
-                    <div className="photo-card md:[grid-column:2/4] col-auto"><Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/gallery/gallery-4.jpg`} alt="Змелена кава" width={1200} height={800} className="photo-card-img w-full h-full object-cover" />
+                    <div className="photo-card md:[grid-column:2/4] col-auto"><Image src="/gallery/gallery-4.jpg" alt="Змелена кава" width={1200} height={800} className="photo-card-img w-full h-full object-cover" />
                     </div>
                 </div>
             </div>

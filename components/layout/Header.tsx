@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div id="Header" className="flex flex-col md:flex-row min-h-screen">
             <div className="md:hidden h-[60vh] relative overflow-hidden bg-brown">
-                <video src="/video.MP4" autoPlay loop muted playsInline className="w-full h-full object-cover object-center opacity-85" />
+                <video src="/video.webm" autoPlay loop muted playsInline className="w-full h-full object-cover object-center opacity-85" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, #18101000 50%, rgb(0 0 0 / 80%) 100%)" }}></div>
             </div>
             <div className="flex-1 flex flex-col justify-center px-6 md:px-14 lg:px-20 pt-10 md:pt-36 pb-14 md:pb-20 bg-surface">
@@ -19,7 +19,7 @@ const Header = () => {
                         <br /><span className="text-cream italic">якого&nbsp;всі&nbsp;люблять</span></h1>
                     <p className="mb-10 text-lg leading-relaxed text-brown-400">Курс для тих, хто втомився казати: «Я просто підробляю в кав'ярні». Навчимо розуміти каву, зварити ідеальний еспресо і малювати лате-арт.</p>
                     <div className="flex flex-col sm:flex-row gap-4 mb-14">
-                        <a href="#Form" className="flex items-center justify-center gap-2 px-8 py-4 rounded-full cursor-pointer text-base bg-brown text-brown-100 transform-none button-first">Записатись на курс <ArrowRight /></a>
+                        <a href="#lead-form" className="flex items-center justify-center gap-2 px-8 py-4 rounded-full cursor-pointer text-base bg-brown text-brown-100 transform-none button-first">Записатись на курс <ArrowRight /></a>
                         <a href="#Courses" className="flex items-center justify-center gap-2 px-8 py-4 rounded-full cursor-pointer text-base bg-transparent text-brown-500 button-second">Переглянути тарифи</a>
                     </div>
                     <div className="flex justify-center md:justify-start gap-8  pt-8 border-t border-brown-50">
@@ -39,7 +39,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="hidden md:block relative bg-brown w-[44%]">
-                <video src="/video.MP4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-75" />
+                <video src="/video.webm" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-75" />
                 <div className="absolute inset-0 header-image"></div>
                 <div className="absolute top-28 left-8">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm header-text">
