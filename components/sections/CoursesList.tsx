@@ -5,7 +5,7 @@ import CourseCard from "../ui/CourseCard"
 const CoursesList = () => {
     return (
 
-        <section id="Courses" className="py-24 bg-white scroll-mt-20 text-brown">
+        <section id="Courses" className="py-24 bg-surface scroll-mt-20 text-brown">
             <div className="container mx-auto px-4">
                 <div className="mb-16">
                     <div className="flex items-center gap-3 mb-4">

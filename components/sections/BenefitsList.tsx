@@ -4,7 +4,7 @@ import BenefitsCard from "../ui/BenefitsCard"
 
 const BenefitsList = () => {
     return (
-        <section id="Benefits" className="py-24 bg-white scroll-mt-20">
+        <section id="Benefits" className="py-24 bg-surface scroll-mt-20">
             <div className="container mx-auto px-4">
                 <div className="mb-16 max-w-xl">
                     <div className="flex items-center gap-3 mb-4">

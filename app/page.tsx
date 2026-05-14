@@ -6,6 +6,7 @@ import Nav from "@/components/layout/Nav";
 import Scroll from "@/components/ui/Scroll";
 import Location from "@/components/sections/Location";
 import Footer from "@/components/layout/Footer";
+import LeadForm from "@/components/sections/LeadForm";
 
 
 
@@ -26,6 +27,7 @@ export default function Home() {
         <Gallery />
         <CoursesList />
         <Location />
+        <LeadForm />
       </main>
       <footer>
         <Footer />
