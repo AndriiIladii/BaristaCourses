@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  basePath: "/BaristaCourses",
+  // output: "export", // Закоментовано для підтримки Server Actions на Vercel
   images: {
     unoptimized: true,
   },
