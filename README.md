@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ☕ Barista School Poltava - Landing Page
 
-## Getting Started
+Сучасний, швидкий та оптимізований лендінг для школи бариста в місті Полтава. Проект створено для залучення нових студентів, демонстрації курсів та швидкого збору лідів через інтеграцію з Telegram.
 
-First, run the development server:
+## 🚀 Технологічний стек
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Фреймворк:** [Next.js 16](https://nextjs.org/) (App Router) + React 19
+- **Мова:** TypeScript
+- **Стилізація:** [Tailwind CSS](https://tailwindcss.com/)
+- **Анімації:** [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)
+- **Форми та валідація:** `react-hook-form` + `zod`
+- **Іконки:** `lucide-react`
+- **Бекенд/Інтеграція:** Next.js Server Actions (Telegram Bot API)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Головні фічі проекту
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Преміальний дизайн та UI/UX:**
+   - Сучасна кольорова палітра (відтінки кави `brown`, `cream`, `surface`).
+   - Фонове відео в Hero-секції для wow-ефекту.
+   - Плавні каскадні анімації появи елементів при скролі (AOS).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Інтеграція з Telegram (Збір лідів):**
+   - Робоча форма зворотного зв'язку.
+   - Безпечна відправка даних у Telegram-групу за допомогою **Next.js Server Actions** (API ключі приховані на сервері).
+   - Строга валідація даних клієнта (телефон, нікнейм в Instagram/Telegram) за допомогою Zod.
 
-## Learn More
+3. **SEO та Продуктивність:**
+   - Автоматична генерація `sitemap.xml` та `robots.txt`.
+   - Розширені мета-теги та OpenGraph зображення для красивого відображення посилань у соцмережах.
+   - 100% семантична HTML-структура.
+   - Оптимізовані зображення через `next/image`.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Адаптивність (Responsive Design):**
+   - Повноцінна підтримка мобільних пристроїв, планшетів та десктопів.
+   - Складні CSS Grid структури (наприклад, у секції Галереї) для ідеального відображення на будь-якому екрані.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎓 Чому ми навчились під час розробки?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Роботі з Next.js Server Actions:** Ми навчились безпечно обробляти форми на сервері без створення окремих API-роутів, передаючи дані напряму в Telegram Bot API.
+- **Майстерності Tailwind CSS:** Відшліфували навички створення складних сіток (CSS Grid), кастомних тіней та позиціонування елементів (як-от бейдж "Топ вибір" на картках).
+- **Валідації з Zod:** Навчилися писати власні правила перевірки (superRefine), щоб переконатися, що клієнт ввів правильний формат номера телефону чи нікнейму з `@`.
+- **Оптимізації анімацій:** Замість важких бібліотек типу Framer Motion ми інтегрували легкий `AOS`, який ідеально підходить для ефектів з'явлення при скролі і не гальмує сайт.
+- **Основам Technical SEO:** Зрозуміли, як працює `metadataBase`, навіщо потрібні `alternates.canonical`, та як Next.js генерує `sitemap.xml` "на льоту".
 
-## Deploy on Vercel
+## 🛠 Як запустити локально
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Встановіть залежності:
+   ```bash
+   npm install
+   ```
+2. Створіть файл `.env.local` у корені проекту та додайте ключі для Telegram:
+   ```env
+   TELEGRAM_BOT_TOKEN=ваш_токен
+   TELEGRAM_CHAT_ID=ваш_чат_id
+   ```
+3. Запустіть сервер розробки:
+   ```bash
+   npm run dev
+   ```
+4. Відкрийте [http://localhost:3000](http://localhost:3000) у вашому браузері.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Зроблено з ❤️ та ☕ у Полтаві.*
