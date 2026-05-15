@@ -12,12 +12,10 @@ const CoffeeLoader = () => {
             setTimeout(() => setVisible(false), 600);
         };
 
-        if (document.readyState === "complete") {
-            handleLoad();
-        } else {
-            window.addEventListener("load", handleLoad);
-            return () => window.removeEventListener("load", handleLoad);
-        }
+        // Trigger fade out shortly after component mounts (hydration complete)
+        // This significantly improves LCP by not waiting for all assets to load
+        const timer = setTimeout(handleLoad, 50);
+        return () => clearTimeout(timer);
     }, []);
 
     if (!visible) return null;

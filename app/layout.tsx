@@ -68,6 +68,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${InterSans.variable} ${Playfair_DisplaySans.variable}  h-full antialiased scroll-smooth`}
     >
+      <head>
+        <link rel="preload" as="image" href="/poster.jpg" fetchPriority="high" />
+      </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         <AosProvider>
           <CoffeeLoader />

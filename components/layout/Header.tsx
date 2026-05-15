@@ -25,7 +25,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="hidden md:block relative bg-brown w-[44%]">
-                <video src="/video.webm" poster="/poster.jpg" preload="none" aria-hidden="true" tabIndex={-1} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-75" />
+                <video src="/video.webm" poster="/poster.jpg" preload="auto" aria-hidden="true" tabIndex={-1} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-75" />
                 <div className="absolute inset-0 header-image"></div>
                 <div className="absolute top-28 left-8">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm header-text">
