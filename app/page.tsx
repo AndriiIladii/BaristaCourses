@@ -1,17 +1,12 @@
-import BenefitsList from "@/components/sections/BenefitsList";
-import CoursesList from "@/components/sections/CoursesList";
-import Gallery from "@/components/sections/Gallery";
 import Header from "@/components/layout/Header";
 import Nav from "@/components/layout/Nav";
 import Scroll from "@/components/ui/Scroll";
+import BenefitsList from "@/components/sections/BenefitsList";
+import CoursesList from "@/components/sections/CoursesList";
+import Gallery from "@/components/sections/Gallery";
 import Location from "@/components/sections/Location";
-import Footer from "@/components/layout/Footer";
 import LeadForm from "@/components/sections/LeadForm";
-
-
-
-
-
+import Footer from "@/components/layout/Footer";
 
 
 export default function Home() {
@@ -29,9 +24,9 @@ export default function Home() {
         <Location />
         <LeadForm />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+
+      <Footer />
+
 
     </>
   );

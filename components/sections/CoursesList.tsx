@@ -1,22 +1,24 @@
 import { courses } from "@/data/courses"
-import type { Course } from "@/data/courses"
+import type { Course } from "@/types"
 import CourseCard from "../ui/CourseCard"
+import SectionHeading from "../ui/SectionHeading"
 
 const CoursesList = () => {
     return (
-
-        <section id="Courses" className="py-24 bg-surface scroll-mt-20 text-brown">
+        <section id="Courses" className="py-16 md:py-24 bg-surface scroll-mt-20 text-brown">
             <div className="container mx-auto px-4">
-                <div className="mb-16">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="h-px w-10 bg-cream"></div>
-                        <span className="text-xs uppercase tracking-[0.18em] text-cream">Програми навчання</span>
-                    </div>
-                    <h2 className="leading-tight text-h2 font-secondary tracking-[-0.02em]">Обери свій шлях<br /><span className="text-cream italic">у світ кави</span></h2>
+                <div data-aos="fade-up">
+                    <SectionHeading
+                        label="Програми навчання"
+                        titleStart="Обери свій шлях"
+                        titleItalic="у світ кави"
+                    />
                 </div>
                 <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
                     {courses.map((course: Course, index: number) => (
-                        <CourseCard key={course.id} course={course} index={index} />
+                        <div key={course.id} data-aos="fade-up" data-aos-delay={index * 150} className="h-full">
+                            <CourseCard course={course} index={index} />
+                        </div>
                     ))}
                 </div>
             </div>

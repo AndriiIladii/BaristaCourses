@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendLeadToTelegram } from "@/actions/telegram";
 import { formSchema, type FormValues } from "@/lib/validations/schema";
@@ -21,12 +21,14 @@ function useLeadForm() {
     defaultValues: {
       name: "",
       courseId: "",
-      contactMethod: "telegram",
+      contactMethod: "" as any,
       contactValue: "",
     },
   });
 
   const onSubmit = async (data: FormValues) => {
+    if (isSubmitting || isSuccess) return;
+
     try {
       const result = await sendLeadToTelegram(data);
       if (result.success) {
@@ -42,6 +44,7 @@ function useLeadForm() {
 
   const contactMethod = watch("contactMethod");
   const contactValue = watch("contactValue");
+  const prevContactMethod = useRef(contactMethod);
 
   useEffect(() => {
     const course = searchParams.get("course");
@@ -51,16 +54,19 @@ function useLeadForm() {
   }, [searchParams, setValue]);
 
   useEffect(() => {
-    if (contactMethod === "telegram" || contactMethod === "instagram") {
-      if (!contactValue || contactValue.startsWith("+380")) {
-        setValue("contactValue", "@");
+    if (prevContactMethod.current !== contactMethod) {
+      if (contactMethod === "telegram" || contactMethod === "instagram") {
+        if (!contactValue || contactValue.startsWith("+380")) {
+          setValue("contactValue", "@");
+        }
+      } else if (contactMethod === "phone") {
+        if (!contactValue || contactValue === "@") {
+          setValue("contactValue", "+380");
+        }
       }
-    } else if (contactMethod === "phone") {
-      if (!contactValue || contactValue === "@") {
-        setValue("contactValue", "+380");
-      }
+      prevContactMethod.current = contactMethod;
     }
-  }, [contactMethod, setValue]);
+  }, [contactMethod, contactValue, setValue]);
 
   return {
     register,

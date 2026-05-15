@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import CoffeeLoader from "@/components/ui/CoffeeLoader";
+import { AosProvider } from "@/components/providers/AosProvider";
 
 const InterSans = Inter({
   variable: "--font-inter-sans",
@@ -14,8 +15,22 @@ const Playfair_DisplaySans = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_PATH ? `https://barista-course-poltava.vercel.app` : 'http://localhost:3000'),
   title: "Школа Бариста в Полтаві | Навчання від Діани Рохманько",
   description: "Курс для тих, хто хоче навчитися розуміти каву, варити ідеальний еспресо і малювати лате-арт. Записуйся на курси бариста в Полтаві!",
+  keywords: ["школа бариста", "курси бариста полтава", "навчання бариста", "лате-арт", "кава", "навчання кава полтава", "еспресо"],
+  authors: [{ name: "Діана Рохманько" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: "Школа Бариста в Полтаві",
     description: "Навчись малювати лате-арт, розуміти зерно та будувати кар'єру бариста з нуля — у Полтаві.",
@@ -37,6 +52,9 @@ export const metadata: Metadata = {
     description: "Практичні курси бариста з нуля. Лате-арт, еспресо, альтернатива.",
     images: [`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/gallery/gallery-4.png`],
   },
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({
@@ -51,8 +69,10 @@ export default function RootLayout({
       className={`${InterSans.variable} ${Playfair_DisplaySans.variable}  h-full antialiased scroll-smooth`}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
-        <CoffeeLoader />
-        {children}
+        <AosProvider>
+          <CoffeeLoader />
+          {children}
+        </AosProvider>
       </body>
     </html>
   );

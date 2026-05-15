@@ -11,9 +11,9 @@ const Nav = () => {
         <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-5 pointer-events-none">
             <div className="w-full md:w-auto pointer-events-auto">
                 <nav className="bg-brown w-full flex items-center justify-between md:justify-start gap-4 md:gap-8 px-5 md:px-8 py-3 rounded-2xl md:rounded-full navigation">
-                    <a href="#" className="flex items-center gap-2 flex-shrink-0">
+                    <a href="/" className="flex items-center gap-2 flex-shrink-0">
                         <Coffee className="text-brown-100" />
-                        <span className='text-brown-100 font-secondary text-[1.05rem] tracking-[-0.01em]'>Barista School</span>
+                        <span className='text-brown-100 font-secondary text-lg tracking-[-0.01em]'>Barista School</span>
                     </a>
                     <ul className="hidden md:flex items-center gap-7">
                         {NAV_LINKS.map((link) => (

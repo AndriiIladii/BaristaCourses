@@ -22,7 +22,7 @@ const CourseCard = ({ course, index }: CourseCardProps) => {
             )}
             <div className="flex flex-col flex-1 p-6 gap-5">
                 <div>
-                    <span className={`text-[10px] uppercase tracking-[0.2em] ${isTopChoice ? 'text-brown-200' : 'text-brown-300'}`}>Курс {String(index + 1).padStart(2, '0')}</span>
+                    <span className={`text-xs uppercase tracking-[0.2em] ${isTopChoice ? 'text-brown-200' : 'text-brown-300'}`}>Курс {String(index + 1).padStart(2, '0')}</span>
                     <h3 className={`mt-1 text-h3 font-secondary --text-h3--line-height ${isTopChoice ? 'text-white' : 'text-brown'}`}>{course.courseName}</h3>
                     <p className={`text-xs mt-1 ${isTopChoice ? 'text-brown-200' : 'text-cream'}`}>{course.courseSubname}</p>
                 </div>

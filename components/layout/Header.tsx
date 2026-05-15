@@ -4,7 +4,7 @@ import HeroStats from '../ui/HeroStats';
 
 const Header = () => {
     return (
-        <div id="Header" className="flex flex-col md:flex-row min-h-screen">
+        <section id="Header" className="flex flex-col md:flex-row min-h-screen">
             <HeroVideo />
             <div className="flex-1 flex flex-col justify-center px-6 md:px-14 lg:px-20 pt-10 md:pt-36 pb-14 md:pb-20 bg-surface">
                 <div className="max-w-xl">
@@ -25,7 +25,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="hidden md:block relative bg-brown w-[44%]">
-                <video src="/video.webm" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-75" />
+                <video src="/video.webm" poster="/poster.jpg" preload="none" aria-hidden="true" tabIndex={-1} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-75" />
                 <div className="absolute inset-0 header-image"></div>
                 <div className="absolute top-28 left-8">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm header-text">
@@ -42,7 +42,7 @@ const Header = () => {
                     <p className="text-sm leading-relaxed text-brown-200">Навчись малювати лате-арт, розуміти зерно та будувати кар'єру бариста з нуля — у Полтаві.</p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

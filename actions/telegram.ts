@@ -2,8 +2,42 @@
 
 import { formSchema, type FormValues } from "@/lib/validations/schema";
 import { courses } from "@/data/courses";
+import { headers } from "next/headers";
+
+const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
+const RATE_LIMIT_WINDOW = 60 * 1000;
+const MAX_REQUESTS = 3;
 
 export async function sendLeadToTelegram(data: FormValues) {
+  const ip = (await headers()).get("x-forwarded-for") || "unknown";
+  const now = Date.now();
+  const userRate = rateLimitMap.get(ip);
+
+  if (userRate) {
+    if (now - userRate.timestamp < RATE_LIMIT_WINDOW) {
+      if (userRate.count >= MAX_REQUESTS) {
+        return {
+          success: false,
+          error: "Занадто багато запитів. Зачекайте хвилину.",
+        };
+      }
+      userRate.count++;
+    } else {
+      rateLimitMap.set(ip, { count: 1, timestamp: now });
+    }
+  } else {
+    rateLimitMap.set(ip, { count: 1, timestamp: now });
+  }
+
+  if (rateLimitMap.size > 1000) {
+    const timeLimit = now - RATE_LIMIT_WINDOW;
+    for (const [key, value] of rateLimitMap.entries()) {
+      if (value.timestamp < timeLimit) {
+        rateLimitMap.delete(key);
+      }
+    }
+  }
+
   const parsed = formSchema.safeParse(data);
   if (!parsed.success) {
     return { success: false, error: "Невалідні дані форми" };
