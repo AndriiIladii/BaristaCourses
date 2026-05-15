@@ -11,8 +11,7 @@ export interface Course {
 }
 export interface Benefit {
   id: string;
-  BenefitName: string;
-  BenefitInfo: string;
+  benefitName: string;
+  benefitInfo: string;
   icon: LucideIcon;
-  alt: string;
 }

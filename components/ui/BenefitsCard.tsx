@@ -13,8 +13,8 @@ const BenefitsCard = ({ benefit, index }: BenefitCardProps) => {
             <div className="relative z-10 w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-brown">
                 <Icon className="text-brown-100 w-6 h-6" />
             </div>
-            <h3 className="relative z-10 mb-3 text-[1.2rem] text-brown font-secondary tracking-[-0.01em]">{benefit.BenefitName}</h3>
-            <p className="relative z-10 leading-relaxed text-sm text-brown-400">{benefit.BenefitInfo}</p>
+            <h3 className="relative z-10 mb-3 text-[1.2rem] text-brown font-secondary tracking-[-0.01em]">{benefit.benefitName}</h3>
+            <p className="relative z-10 leading-relaxed text-sm text-brown-400">{benefit.benefitInfo}</p>
         </div>
     )
 }
