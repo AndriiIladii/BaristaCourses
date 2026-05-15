@@ -1,6 +1,6 @@
 "use server";
 
-import { formSchema, type FormValues } from "@/components/schema";
+import { formSchema, type FormValues } from "@/lib/validations/schema";
 import { courses } from "@/data/courses";
 
 export async function sendLeadToTelegram(data: FormValues) {

@@ -1,12 +1,4 @@
-export interface Course {
-  id: string;
-  courseName: string;
-  courseSubname: string;
-  duration: string;
-  forWho: string;
-  abilities: string[];
-  price: number;
-}
+import type { Course } from "@/types";
 
 export const courses: Course[] = [
   {
@@ -25,6 +17,7 @@ export const courses: Course[] = [
       "Тестування + сертифікат",
     ],
     price: 6900,
+    isFeatured: true,
   },
   {
     id: "cold-coffee-lab",

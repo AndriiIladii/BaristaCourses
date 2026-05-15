@@ -234,6 +234,20 @@ body {
   }
 }
 
+@keyframes smoothEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-smooth-enter {
+  animation: smoothEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 .button-first:hover {
   transform: translateY(-2px);
   box-shadow: rgba(62, 39, 35, 0.45) 0px 12px 40px;

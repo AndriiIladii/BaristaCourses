@@ -1,12 +1,6 @@
-import { Coffee, Milk, Brain, Users, LucideIcon } from 'lucide-react';
+import { Coffee, Milk, Brain, Users } from "lucide-react";
 
-export interface Benefit {
-  id: string;
-  BenefitName: string;
-  BenefitInfo: string;
-  icon: LucideIcon;
-  alt: string;
-}
+import type { Benefit } from "@/types";
 
 export const benefits: Benefit[] = [
   {

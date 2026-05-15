@@ -1,71 +1,15 @@
 "use client";
 
-import { Clock, MapPin, Phone, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { courses } from "@/data/courses"
-import { useForm } from "react-hook-form";
-import { zodResolver } from '@hookform/resolvers/zod';
-import { formSchema, type FormValues } from '../schema';
-
-import { sendLeadToTelegram } from '@/actions/telegram';
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+import ContactSidebar from '../ui/ContactSidebar';
+import SuccessMessage from '../ui/SuccessMessage';
+import useLeadForm from '@/hooks/useLeadForm';
 
 const LeadFormContent = () => {
-    const searchParams = useSearchParams();
-    const [isSuccess, setIsSuccess] = useState(false);
 
-    const {
-        register,
-        handleSubmit,
-        reset,
-        setValue,
-        watch,
-        formState: { errors, isSubmitting }
-    } = useForm<FormValues>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            name: "",
-            courseId: "",
-            contactMethod: "telegram",
-            contactValue: ""
-        }
-    });
-
-    const contactMethod = watch("contactMethod");
-    const contactValue = watch("contactValue");
-
-    useEffect(() => {
-        const course = searchParams.get('course');
-        if (course) {
-            setValue('courseId', course as FormValues['courseId']);
-        }
-    }, [searchParams, setValue]);
-
-    useEffect(() => {
-        if (contactMethod === "telegram" || contactMethod === "instagram") {
-            if (!contactValue || contactValue.startsWith("+380")) {
-                setValue("contactValue", "@");
-            }
-        } else if (contactMethod === "phone") {
-            if (!contactValue || contactValue === "@") {
-                setValue("contactValue", "+380");
-            }
-        }
-    }, [contactMethod, setValue]);
-
-    const onSubmit = async (data: FormValues) => {
-        try {
-            const result = await sendLeadToTelegram(data);
-            if (result.success) {
-                setIsSuccess(true)
-                reset();
-            } else {
-                alert("Сталася помилка при відправці. Спробуйте пізніше.");
-            }
-        } catch (error) {
-            alert("Сталася помилка при відправці. Спробуйте пізніше.");
-        }
-    };
+    const { register, handleSubmit, onSubmit, errors, isSubmitting, isSuccess, setIsSuccess } = useLeadForm();
 
 
     return (
@@ -80,63 +24,10 @@ const LeadFormContent = () => {
                         <br /><span className="text-cream italic">Тицяй — ми відповімо ❤️</span></h2>
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-2xl grid md:grid-cols-5">
-                    <div className="md:col-span-2 p-8 md:p-12 flex flex-col justify-between relative overflow-hidden bg-brown">
-                        <div className="absolute -bottom-8 -right-6 select-none pointer-events-none font-secondary text-[10rem] font-black text-[rgba(255,255,255,0.04)] leading-none">☕</div>
-                        <div>
-                            <p className="text-3xl mb-2 font-secondary italic text-brown-100 tracking-[-0.02em]">Barista School</p>
-                            <p className="text-sm text-brown-400">Полтава, Україна</p>
-                            <div className="mt-10 flex flex-col gap-6">
-                                <div className="flex items-start gap-4">
-                                    <div className='w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-brown-200 bg-white/5'><MapPin size={16} className="text-brown-200" /></div>
-                                    <div>
-                                        <p className='text-xs uppercase tracking-wider mb-1 text-brown-500'>Адреса</p>
-                                        <p className='text-sm leading-relaxed text-brown-200'>вул. Соборності, 42 <br />Полтава, 36000</p>
-                                    </div>
-
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className='w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-brown-200 bg-white/5'><Clock size={16} className="text-brown-200" /></div>
-                                    <div>
-                                        <p className='text-xs uppercase tracking-wider mb-1 text-brown-500'>Графік</p>
-                                        <p className='text-sm leading-relaxed text-brown-200'>8:00 до 19:00</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className='w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-brown-200 bg-white/5'><Phone size={16} className="text-brown-200" /></div>
-                                    <div>
-                                        <p className='text-xs uppercase tracking-wider mb-1 text-brown-500'>Контакт</p>
-                                        <a href='tel:+380990116084' className='text-sm leading-relaxed text-brown-200'>+380990116084</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ContactSidebar />
                     <div className='md:col-span-3 p-8 md:p-12 relative'>
-                        <style>{`
-                            @keyframes smoothEnter {
-                                from { opacity: 0; transform: translateY(10px) scale(0.98); }
-                                to { opacity: 1; transform: translateY(0) scale(1); }
-                            }
-                            .animate-smooth-enter {
-                                animation: smoothEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                            }
-                        `}</style>
                         {isSuccess ? (
-                            <div className="text-center py-12 animate-smooth-enter">
-                                <div className="w-16 h-16 bg-[#eef5e6] text-[#6b8e23] rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-2xl font-secondary text-brown mb-2">Заявка прийнята!</h3>
-                                <p className="text-brown-400 mb-8">Дякуємо за довіру. Ми зв'яжемося з тобою найближчим часом для уточнення деталей.</p>
-                                <button
-                                    onClick={() => setIsSuccess(false)}
-                                    className="text-sm uppercase tracking-wider text-brown-500 hover:text-brown transition-colors"
-                                >
-                                    Відправити ще одну
-                                </button>
-                            </div>
+                            <SuccessMessage onReset={() => setIsSuccess(false)} />
                         ) : (
                             <form className="flex flex-col gap-6 animate-smooth-enter" onSubmit={handleSubmit(onSubmit)}>
                                 <div>

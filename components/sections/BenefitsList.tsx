@@ -1,5 +1,5 @@
 import { benefits } from "@/data/benefits"
-import type { Benefit } from "@/data/benefits"
+import type { Benefit } from "@/types"
 import BenefitsCard from "../ui/BenefitsCard"
 
 const BenefitsList = () => {

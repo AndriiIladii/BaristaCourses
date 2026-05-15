@@ -1,4 +1,4 @@
-import type { Course } from "@/data/courses"
+import type { Course } from "@/types"
 import { CircleCheckBig, Clock, Users } from 'lucide-react';
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ interface CourseCardProps {
 
 
 const CourseCard = ({ course, index }: CourseCardProps) => {
-    const isTopChoice = course.id === 'basic-barista';
+    const isTopChoice = course.isFeatured;
 
     return (
         <div className={`course-card relative flex flex-col rounded-3xl overflow-hidden ${isTopChoice ? 'bg-brown text-brown-100 shadow-xl' : 'bg-white'}`}>

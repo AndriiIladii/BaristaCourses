@@ -1,4 +1,4 @@
-export const links = [
+export const NAV_LINKS = [
   { href: "#Header", text: "Про Курс" },
   { href: "#Benefits", text: "Переваги" },
   { href: "#Gallery", text: "Роботи" },

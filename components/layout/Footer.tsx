@@ -1,5 +1,5 @@
 
-import { links } from "@/data/links"
+import { NAV_LINKS } from "@/constants/links"
 import { Coffee } from 'lucide-react';
 
 const Footer = () => {
@@ -18,7 +18,7 @@ const Footer = () => {
                     <div>
                         <p className="text-xs uppercase tracking-[0.18em] mb-5 text-brown-500">Навігація</p>
                         <ul className="flex flex-col gap-3">
-                            {links.map((link) => (
+                            {NAV_LINKS.map((link) => (
                                 <li key={link.text}><a className="text-sm transition-colors text-brown-400 link" href={link.href}>{link.text}</a></li>
                             ))}
                         </ul>

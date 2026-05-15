@@ -1,12 +1,11 @@
 import { ArrowRight } from 'lucide-react';
+import HeroVideo from '../ui/HeroVideo';
+import HeroStats from '../ui/HeroStats';
 
 const Header = () => {
     return (
         <div id="Header" className="flex flex-col md:flex-row min-h-screen">
-            <div className="md:hidden h-[60vh] relative overflow-hidden bg-brown">
-                <video src="/video.webm" autoPlay loop muted playsInline className="w-full h-full object-cover object-center opacity-85" />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, #18101000 50%, rgb(0 0 0 / 80%) 100%)" }}></div>
-            </div>
+            <HeroVideo />
             <div className="flex-1 flex flex-col justify-center px-6 md:px-14 lg:px-20 pt-10 md:pt-36 pb-14 md:pb-20 bg-surface">
                 <div className="max-w-xl">
                     <div className="flex items-center gap-3 mb-6">
@@ -22,20 +21,7 @@ const Header = () => {
                         <a href="#lead-form" className="flex items-center justify-center gap-2 px-8 py-4 rounded-full cursor-pointer text-base bg-brown text-brown-100 transform-none button-first">Записатись на курс <ArrowRight /></a>
                         <a href="#Courses" className="flex items-center justify-center gap-2 px-8 py-4 rounded-full cursor-pointer text-base bg-transparent text-brown-500 button-second">Переглянути тарифи</a>
                     </div>
-                    <div className="flex justify-center md:justify-start gap-8  pt-8 border-t border-brown-50">
-                        <div>
-                            <p className="text-2xl font-secondary text-brown font-bold">50+</p>
-                            <p className="text-xs mt-0.5 uppercase tracking-wider text-brown-300">Студентів</p>
-                        </div>
-                        <div>
-                            <p className="text-2xl font-secondary text-brown font-bold">4</p>
-                            <p className="text-xs mt-0.5 uppercase tracking-wider text-brown-300">Курси</p>
-                        </div>
-                        <div>
-                            <p className="text-2xl font-secondary text-brown font-bold">100%</p>
-                            <p className="text-xs mt-0.5 uppercase tracking-wider text-brown-300">Практика</p>
-                        </div>
-                    </div>
+                    <HeroStats />
                 </div>
             </div>
             <div className="hidden md:block relative bg-brown w-[44%]">

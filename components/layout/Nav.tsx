@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Coffee } from 'lucide-react';
-import { links } from "@/data/links"
+import { NAV_LINKS } from "@/constants/links"
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ const Nav = () => {
                         <span className='text-brown-100 font-secondary text-[1.05rem] tracking-[-0.01em]'>Barista School</span>
                     </a>
                     <ul className="hidden md:flex items-center gap-7">
-                        {links.map((link) => (
+                        {NAV_LINKS.map((link) => (
                             <li key={link.text}><a className="text-sm transition-colors text-brown-300 tracking-[-0.01em] link" href={link.href}>{link.text}</a></li>
                         ))}
                     </ul>
@@ -35,7 +35,7 @@ const Nav = () => {
                 >
                     <nav className="mt-2 px-4 py-5 rounded-2xl navigation bg-brown flex flex-col gap-4">
                         <ul className="flex flex-col gap-3">
-                            {links.map((link) => (
+                            {NAV_LINKS.map((link) => (
                                 <li key={link.text}>
                                     <a
                                         href={link.href}
