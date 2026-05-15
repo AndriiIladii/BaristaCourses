@@ -1,9 +1,9 @@
-import { Clock, MapPin, Phone } from 'lucide-react';
+import { Clock, MapPin, Phone, Coffee } from 'lucide-react';
 
 const ContactSidebar = () => {
     return (
         <div className="md:col-span-2 p-8 md:p-12 flex flex-col justify-between relative overflow-hidden bg-brown">
-            <div className="absolute -bottom-8 -right-6 select-none pointer-events-none font-secondary text-[10rem] font-black text-[rgba(255,255,255,0.04)] leading-none">☕</div>
+            <Coffee strokeWidth={2.5} className="absolute -bottom-8 -right-6 select-none pointer-events-none w-40 h-40 text-white opacity-5" />
             <div>
                 <p className="text-3xl mb-2 font-secondary italic text-brown-100 tracking-[-0.02em]">Barista School</p>
                 <p className="text-sm text-brown-400">Полтава, Україна</p>
