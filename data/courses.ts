@@ -16,7 +16,7 @@ export const courses: Course[] = [
       "Сервіс і спілкування з гостями",
       "Тестування + сертифікат",
     ],
-    price: 6900,
+    price: 7900,
     isFeatured: true,
   },
   {
@@ -33,7 +33,7 @@ export const courses: Course[] = [
       "Баланс смаку, текстур і температур",
       "Практика + сертифікат",
     ],
-    price: 2400,
+    price: 3400,
   },
   {
     id: "latte-art-flow",
@@ -49,22 +49,6 @@ export const courses: Course[] = [
       "Патерни та малюнки",
       "Практика + фідбек + сертифікат",
     ],
-    price: 3100,
-  },
-  {
-    id: "content-for-coffee",
-    courseName: "Content for Coffee",
-    courseSubname: "Контент, що продає каву",
-    duration: "1 день",
-    forWho: "Власники, адміни, SMM",
-    abilities: [
-      "Контент, який працює",
-      "Фото: створюй візуал, що чіпляє",
-      "Відео: Reels & Stories",
-      "Тексти: як писати просто і смачно",
-      "Публікація і аналітика",
-      "Сертифікат + гайд для Reels",
-    ],
-    price: 2100,
+    price: 4100,
   },
 ];

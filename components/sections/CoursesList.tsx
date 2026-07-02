@@ -14,9 +14,9 @@ const CoursesList = () => {
                         titleItalic="у світ кави"
                     />
                 </div>
-                <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                <div className="flex flex-wrap justify-center gap-5">
                     {courses.map((course: Course, index: number) => (
-                        <div key={course.id} data-aos="fade-up" data-aos-delay={index * 150} className="h-full">
+                        <div key={course.id} data-aos="fade-up" data-aos-delay={index * 150} className="h-full w-full sm:basis-[min(48%,420px)] xl:basis-[min(31%,420px)]">
                             <CourseCard course={course} index={index} />
                         </div>
                     ))}
